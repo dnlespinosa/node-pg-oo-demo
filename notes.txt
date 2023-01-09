@@ -1,0 +1,27 @@
+joining in PSQL 
+
+SELECT messages.id, messages.msg, tags.tag 
+FROM messages 
+AS m 
+LEFT JOIN messages_tags 
+AS mt 
+ON m.id = mt.message_id
+LEFT JOIN tags as tag
+ON mt.tag.tag_code = t.code;
+
+GOALS of OO 
+    refactor our express apps to separate the view logic (routing) from model logic (data)
+    compare different OO designs for interfacing with our database 
+    Borrow useful ides from ORMS to build our own model layers
+
+Object Orientation
+    To help organize our code 
+    OO can offer abstraction - the ability to hide implementation details when they arent needed 
+    OO can offer encapsulation - the ability to group functionality into larger logical pieces 
+        a "capsule"
+            everything related to data/functionality lives in one file 
+    OO can offer polymoprhism - the ability to implement similar functionality to different classes
+        the ability to make similar things work similarly 
+            We could have other types of variables with the same API
+                if two data pieces have a similar data variable that may act differently (example, dogs and cats SPEAK, but dogs go woof and cats go MEOW)
+
